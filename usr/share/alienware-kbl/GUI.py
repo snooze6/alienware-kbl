@@ -316,7 +316,7 @@ class GUI(Gtk.Window):
                 self.computer=self.driver.computer
             else:
                 computer_name=AKBLConnection._command('get_computer_name')
-                self.computer=getattr(Computers, computer_name)()
+                self.computer=getattr(Computers, computer_name.replace(' ',''))()
                 
                 
             self.apply_configuration=False
